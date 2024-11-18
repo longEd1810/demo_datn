@@ -50,15 +50,15 @@
 - name: "Start a new dirmngr with our config changes"
   command: "gpgconf --launch dirmngr"
 
-- name: "Wait for the GPG agent and dirmngr control sockets"
-  wait_for:
-    path: "{{ root_gpg_dir }}/{{ item }}"
-    state: present
-    sleep: 5
-    timeout: 60
-  with_items:
-    - "S.dirmngr"
-    - "S.gpg-agent"
+# - name: "Wait for the GPG agent and dirmngr control sockets"
+#   wait_for:
+#     path: "{{ root_gpg_dir }}/{{ item }}"
+#     state: present
+#     sleep: 5
+#     timeout: 60
+#   with_items:
+#     - "S.dirmngr"
+#     - "S.gpg-agent"
 
 - name: "Create the Streisand GPG keyring"
   command: "gpg2 {{ streisand_default_gpg_flags }} --fingerprint"

@@ -4,20 +4,20 @@
     package: "{{ apache_packages_to_remove }}"
     state: absent
 
-- name: "Add the official Nginx APT key; hiding 25 lines of log..."
-  apt_key:
-    id: 7BD9BF62
-    data: "{{ item }}"
-  with_file: nginx_signing.key
-  # no_log: True
+# - name: "Add the official Nginx APT key; hiding 25 lines of log..."
+#   apt_key:
+#     id: 7BD9BF62
+#     data: "{{ item }}"
+#   with_file: nginx_signing.key
+#   # no_log: True
 
-- name: Add the official Nginx repository
-  apt_repository:
-    repo: "deb https://nginx.org/packages/{{ ansible_distribution|lower }}/ {{ ansible_lsb.codename }} nginx"
-  register: nginx_add_apt_repository
-  until: not nginx_add_apt_repository.failed
-  retries: "{{ apt_repository_retries }}"
-  delay: "{{ apt_repository_delay }}"
+# - name: Add the official Nginx repository
+#   apt_repository:
+#     repo: "deb https://nginx.org/packages/{{ ansible_distribution|lower }}/ {{ ansible_lsb.codename }} nginx"
+#   register: nginx_add_apt_repository
+#   until: not nginx_add_apt_repository.failed
+#   retries: "{{ apt_repository_retries }}"
+#   delay: "{{ apt_repository_delay }}"
 
 
 - name: Install Nginx

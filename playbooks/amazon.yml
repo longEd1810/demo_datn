@@ -30,14 +30,14 @@
   # These variable files are included so the ec2-security-group role
   # knows which ports to open
   vars_files:
-    - roles/openconnect/defaults/main.yml
-    - roles/openvpn/defaults/main.yml
-    - roles/shadowsocks/defaults/main.yml
+    # - roles/openconnect/defaults/main.yml
+    # - roles/openvpn/defaults/main.yml
+    # - roles/shadowsocks/defaults/main.yml
     - roles/ssh/defaults/main.yml
-    - roles/lets-encrypt/vars/main.yml
-    - roles/streisand-gateway/defaults/main.yml
-    - roles/stunnel/defaults/main.yml
-    - roles/tor-bridge/defaults/main.yml
+    # - roles/lets-encrypt/vars/main.yml
+    # - roles/streisand-gateway/defaults/main.yml
+    # - roles/stunnel/defaults/main.yml
+    # - roles/tor-bridge/defaults/main.yml
     - roles/wireguard/defaults/main.yml
 
   vars_prompt:

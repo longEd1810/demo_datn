@@ -11,7 +11,7 @@ listen:
 
 protocols:
 (
-     { name: "ssh";     host: "127.0.0.1"; port: "{{ ssh_port }}";     probe: "builtin"; fork: true; },
+     { name: "ssh";     host: "127.0.0.1"; port: "22";     probe: "builtin"; fork: true; },
      { name: "tls";     host: "127.0.0.1"; port: "{{ nginx_port}}";    probe: "builtin"; },
 {% if streisand_openvpn_enabled %}
      { name: "openvpn"; host: "127.0.0.1"; port: "{{ openvpn_port }}"; probe: "builtin"; },

@@ -19,22 +19,22 @@
   roles:
     - common
     - gpg
-    - ssh
+    # - ssh
     - service-net
-    - role: openconnect
-      when: streisand_openconnect_enabled
-    - role: openvpn
-      when: streisand_openvpn_enabled
-    - role: shadowsocks
-      when: streisand_shadowsocks_enabled
-    - role: ssh-forward
-      when: streisand_ssh_forward_enabled
-    - role: tinyproxy
-      when: streisand_tinyproxy_enabled
+    # - role: openconnect
+    #   when: streisand_openconnect_enabled
+    # - role: openvpn
+    #   when: streisand_openvpn_enabled
+    # - role: shadowsocks
+    #   when: streisand_shadowsocks_enabled
+    # - role: ssh-forward
+    #   when: streisand_ssh_forward_enabled
+    # - role: tinyproxy
+    #   when: streisand_tinyproxy_enabled
     # tor-bridge is skipped in our full Ansible run on Travis CI due to
     # connectivity issues.
-    - role: tor-bridge
-      when: not streisand_ci and streisand_tor_enabled
+    # - role: tor-bridge
+    #   when: not streisand_ci and streisand_tor_enabled
     - sslh
     - ufw
     - role: wireguard

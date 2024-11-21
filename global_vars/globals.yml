@@ -9,5 +9,5 @@ upstream_dns_servers:
 # playbooks/roles/cloudflared/defaults/main.yml
 
 streisand_client_test: no
-
+ssh_port: 22
 streisand_site_vars: "{{ lookup('env','HOME') }}/.streisand/site.yml"

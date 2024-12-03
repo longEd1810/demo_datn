@@ -31,8 +31,8 @@
       when: streisand_ssh_forward_enabled
     - role: tinyproxy
       when: streisand_tinyproxy_enabled
-    tor-bridge is skipped in our full Ansible run on Travis CI due to
-    connectivity issues.
+    # tor-bridge is skipped in our full Ansible run on Travis CI due to
+    # connectivity issues.
     - role: tor-bridge
       when: not streisand_ci and streisand_tor_enabled
     - sslh
